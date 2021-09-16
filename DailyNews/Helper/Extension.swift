@@ -32,3 +32,15 @@ extension View {
         return modifier(ResignKeyboardOnDragGesture())
     }
 }
+
+extension Optional where Wrapped == String {
+    
+    var wrappedValue: String {
+        if let formattedTitle = self?.trimmingCharacters(in: .whitespacesAndNewlines), !formattedTitle.isEmpty {
+            return formattedTitle
+        } else {
+            return "-"
+        }
+    }
+    
+}

@@ -10,7 +10,7 @@ import SwiftUI
 struct NewsDetailsView: View {
     let viewModel: NewsDetailsViewModel
     
-    @State var isLoading = false
+    @State private var isLoading = false
     
     var body: some View {
         ZStack {
@@ -20,7 +20,7 @@ struct NewsDetailsView: View {
     }
     
     /**Checks and return the loading view based on loading state*/
-    func loadingView() -> some View {
+    private func loadingView() -> some View {
         Group {
             if isLoading {
                 ProgressView()
@@ -36,7 +36,7 @@ struct NewsDetailsView: View {
 struct NewsDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NewsDetailsView(viewModel: NewsDetailsViewModel(news: Helper.fetchSampleNews().hits.first!), isLoading: false)
+            NewsDetailsView(viewModel: NewsDetailsViewModel(news: Helper.fetchSampleNews().hits.first!))
         }
     }
 }

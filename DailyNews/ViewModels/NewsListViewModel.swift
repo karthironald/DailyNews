@@ -22,9 +22,9 @@ class NewsListViewModel: NSObject, ObservableObject, NewsListViewModelProtocol {
     @Published var isFetching = true
     
     var isAllHitsFetched = false
-    var currentPage = -1
-    let perPage = 20
     
+    private var currentPage = -1
+    private let perPage = 20
     private var cancellables: Set<AnyCancellable> = []
     
     
@@ -33,7 +33,7 @@ class NewsListViewModel: NSObject, ObservableObject, NewsListViewModelProtocol {
     override init() {
         super.init()
         $searchText
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main) // Delay API hit to handle fast user typing action
+            .debounce(for: .seconds(0.75), scheduler: DispatchQueue.main) // Delay API hit to handle fast user typing action
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.fetchNews(paginating: false, shouldReset: true)

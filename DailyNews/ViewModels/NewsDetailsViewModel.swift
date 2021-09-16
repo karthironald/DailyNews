@@ -10,10 +10,6 @@ import Foundation
 class NewsDetailsViewModel: NSObject {
     
     var news: Hit
-    
-    var wrappedTitle: String {
-        news.title ?? "-"
-    }
     var wrappedUrl: URL {
         URL(string: news.url ?? "") ?? URL(string: "https://www.apple.com")!
     }

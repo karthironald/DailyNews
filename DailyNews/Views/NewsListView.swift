@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewsListView: View {
-    @StateObject var viewModel = NewsListViewModel()
-    @State var searchText = ""
+    @StateObject private var viewModel = NewsListViewModel()
+    @State private var searchText = ""
     
     var body: some View {
         NavigationView {

@@ -13,9 +13,11 @@ struct NewsRowView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(viewModel.wrappedTitle)
-            Text(viewModel.wrappedDate)
-                .foregroundColor(.secondary)
+            Text(viewModel.news.title.wrappedValue)
+            if let createdI = viewModel.news.createdAtI {
+                Text(Helper.format(timeStamp: TimeInterval(createdI)))
+                    .foregroundColor(.secondary)
+            }
         }
         .padding(.vertical)
     }
