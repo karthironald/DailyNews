@@ -13,7 +13,7 @@ struct NewsListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.news, id: \.objectID) { _news in
-                NavigationLink(destination: Text(_news.title ?? "")) {
+                NavigationLink(destination: NewsDetailsView(viewModel: NewsDetailsViewModel(news: _news))) {
                     NewsRowView(viewModel: NewsRowViewModel(news: _news))
                 }
             }
