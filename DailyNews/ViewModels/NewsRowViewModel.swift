@@ -11,7 +11,11 @@ class NewsRowViewModel: NSObject {
     
     var news: Hit
     var wrappedTitle: String {
-        news.title ?? "-"
+        if let formattedTitle = news.title?.trimmingCharacters(in: .whitespacesAndNewlines), !formattedTitle.isEmpty {
+            return formattedTitle
+        } else {
+            return "-"
+        }
     }
     var wrappedDate: String {
         news.createdAt ?? "-"

@@ -17,10 +17,8 @@ protocol NewsListViewModelProtocol {
 
 class NewsListViewModel: NSObject, ObservableObject, NewsListViewModelProtocol {
     
-    @Published var news: [Hit] = []
-    
-    #warning("Need to make this searchtext dynamic after adding search bar")
-    @Published var searchText: String? = "sports"
+    @Published var news: [Hit] = []    
+    @Published var searchText: String?
     @Published var isFetching = true
     
     var isAllHitsFetched = false
@@ -56,7 +54,7 @@ class NewsListViewModel: NSObject, ObservableObject, NewsListViewModelProtocol {
         if let searchText = searchText?.trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), !searchText.isEmpty {
             currentPage += 1
             urlString.append("&query=\(searchText)&page=\(currentPage)")
-        } else { // For any invalid search text, fetch default events list
+        } else { // For any invalid search text, fetch default news list
             currentPage = paginating ? currentPage + 1 : 0
             urlString.append("&page=\(currentPage)")
         }
