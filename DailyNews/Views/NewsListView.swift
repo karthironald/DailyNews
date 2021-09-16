@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct NewsListView: View {
+    @StateObject var viewModel = NewsListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(viewModel.news, id: \.objectID) { _news in
+                NavigationLink(destination: Text(_news.title ?? "")) {
+                    NewsRowView(viewModel: NewsRowViewModel(news: _news))
+                }
+            }
+            .onAppear(perform: {
+                viewModel.fetchNews(paginating: false, shouldReset: false)
+            })
+            .navigationTitle("News")
+        }
     }
+    
 }
 
 struct NewsListView_Previews: PreviewProvider {
