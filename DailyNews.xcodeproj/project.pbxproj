@@ -19,6 +19,7 @@
 		772B961D26F3B42A00089D2A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B961C26F3B42A00089D2A /* WebView.swift */; };
 		772B961F26F3B49E00089D2A /* NewsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B961E26F3B49E00089D2A /* NewsDetailsView.swift */; };
 		772B962126F3B50800089D2A /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B962026F3B50800089D2A /* NewsDetailsViewModel.swift */; };
+		772B962326F3C33600089D2A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B962226F3C33600089D2A /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		772B961C26F3B42A00089D2A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		772B961E26F3B49E00089D2A /* NewsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsView.swift; sourceTree = "<group>"; };
 		772B962026F3B50800089D2A /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
+		772B962226F3C33600089D2A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				772B961426F3A7DF00089D2A /* NewsRowView.swift */,
 				772B961C26F3B42A00089D2A /* WebView.swift */,
 				772B961E26F3B49E00089D2A /* NewsDetailsView.swift */,
+				772B962226F3C33600089D2A /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				772B961526F3A7DF00089D2A /* NewsRowView.swift in Sources */,
 				772B961D26F3B42A00089D2A /* WebView.swift in Sources */,
 				772B961926F3A82100089D2A /* Helper.swift in Sources */,
+				772B962326F3C33600089D2A /* LoadingView.swift in Sources */,
 				772B961F26F3B49E00089D2A /* NewsDetailsView.swift in Sources */,
 				772B962126F3B50800089D2A /* NewsDetailsViewModel.swift in Sources */,
 				772B961126F3A77A00089D2A /* NewsModel.swift in Sources */,
