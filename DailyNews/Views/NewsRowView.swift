@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct NewsRowView: View {
+    
+    var viewModel: NewsRowViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 5) {
+            Text(viewModel.news.title.wrappedValue)
+            if let createdI = viewModel.news.createdAtI {
+                Text(Helper.format(timeStamp: TimeInterval(createdI)))
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding(.vertical)
     }
 }
 
 struct NewsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsRowView()
+        NewsRowView(viewModel: NewsRowViewModel(news: Helper.fetchSampleNews().hits.first!))
     }
 }
